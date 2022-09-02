@@ -1,0 +1,57 @@
+<!doctype html>
+<meta charset="utf8">
+<html>
+  <head>
+    <style>
+
+      body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      iframe {
+        width: 40%;
+        border-width: 0;
+      }
+
+      /* .functional {
+        border:4px solid red;
+        width: 0%;
+      }
+      .functional-shared {
+        border:4px solid red;
+        width: 0%;
+      }
+      .prototypal {
+        border:4px solid red;
+        width: 0%;
+      }
+      .pseudoclassical {
+        border:4px solid red;
+        width: 0%;
+      }
+      .es6 {
+        border:4px solid red;
+        width: 80%;
+      } */
+
+    </style>
+
+    <script src="../lib/jquery/jquery.js"></script>
+    <script src="../lib/underscore/underscore.js"></script>
+    <script>
+      $(function() {
+        $.each(['functional', 'functional-shared', 'prototypal', 'pseudoclassical', 'es6'], function(i, variant) {
+          $('<iframe src="' + window.location.toString().replace('.html', 'Section.html?') + variant + '" />').addClass(variant).appendTo(document.body);
+        });
+
+        $(window).resize(function() {
+          $('iframe').height($(this).height());
+        }).trigger('resize');
+      });
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
