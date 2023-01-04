@@ -87,8 +87,6 @@
 
 })();
 
-
-
 const pi = Math.PI;
 const tau = 2 * pi;
 let n = 9;

@@ -1,5 +1,9 @@
 
-
+    svg.addEventListener('touchstart', startDrag);
+    svg.addEventListener('touchmove', drag);
+    svg.addEventListener('touchend', endDrag);
+    svg.addEventListener('touchleave', endDrag);
+    svg.addEventListener('touchcancel', endDrag);
 // function intersectRect(r1, r2) {
 //     var r1 = r1.getBoundingClientRect();    //BOUNDING BOX OF THE FIRST OBJECT
 //     var r2 = r2.getBoundingClientRect();    //BOUNDING BOX OF THE SECOND OBJECT
@@ -27,6 +31,7 @@
 function remap(val, low1, high1, low2, high2) {
     return low2 + (high2 - low2) * (val - low1) / (high1 - low1);
   }
+  
 function hexToRGB(hex) {
     let arr = /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/i.exec(hex);
     let r = parseInt(arr[1], 16);
