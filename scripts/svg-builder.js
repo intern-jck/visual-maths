@@ -10,7 +10,7 @@ function svgLine(x1, y1, x2, y2) {
 
   // myLine.setAttribute('stroke', c);
 
-  
+
   myLine.setAttribute('stroke', 'black');
   myLine.setAttribute('stroke-width', '1pt');
   myLine.setAttribute('fill', 'none');
@@ -51,7 +51,7 @@ function buildRect(xPos, yPos, width, height, fill, stroke, weight) {
   newRect.addEventListener('mousemove', drag);
   newRect.addEventListener('mouseup', endDrag);
   newRect.addEventListener('mouseleave', endDrag);
-  
+
   newRect.classList.add('draggable');
 
   return newRect;

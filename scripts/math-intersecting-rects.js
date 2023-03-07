@@ -39,10 +39,7 @@ function draw() {
 
     // console.log(xPos, yPos, width, height)
 
-    const svgRect = buildRect(xPos, yPos, width, height)
-
-
-
+    const svgRect = buildRect(xPos, yPos, width, height);
     canvas.appendChild(svgRect);
 
   }
