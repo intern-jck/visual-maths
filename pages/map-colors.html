@@ -1,49 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="#" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="#">
+        <title>Visual Maths</title>
 
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/cdcc65decb.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/cdcc65decb.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="../scripts/main.js" defer></script>
+        <script type="text/javascript" src="../scripts/maths/map-colors/map-colors.js" defer></script>
 
-  <!-- My Stuff -->
-  <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/main.css" />
+    </head>
 
-  <script src="../scripts/svg-builder.js" defer></script>
-  <script src="../scripts/svg/svg-drag.js" defer></script>
-  <script src="../scripts/math-intersecting-rects.js" defer></script>
+    <body>
+        <nav>
+            <div class="nav-home">
+                <a class="nav-icon" href="https://github.com/intern-jck/vortex-math">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="/"><span>Visual Maths</span></a>
+            </div>
 
-  <title>Visual Maths</title>
-</head>
+            <div class="nav-menu">
+                <a class="nav-link" href="./vortex-diagram.html"> Vortex Diagram </a>
+                <a class="nav-link" href="./square-sums.html"> Square Sums </a>
+                <a class="nav-link" href="./map-colors.html">Map Colors</a>
+            </div>
+        </nav>
 
-<body>
-  <nav>
-    <a class="nav-icon" href="https://github.com/intern-jck/vortex-math" target="_blank">
-      <i class="fab fa-github"></i>
-    </a>
-    <span>Vortex Math</span>
+        <div class="page-header">
+            <h1>Map Colors</h1>
+        </div>
 
-    <div class="nav-menu">
-      <a class="nav-link" href="pages/vortex-diagram.html" target="_blank">Vortex Diagram</a>
-      <a class="nav-link" href="pages/square-sums.html" target="_blank">Square Sums</a>
-      <a class="nav-link" href="pages/map-colors.html" target="_blank">Map Colors</a>
-    </div>
-  </nav>
-  <section class="page-content">
+        <div class="app">
+            <div class="graph">
+                <div id="svg-container" class="svg-container"></div>
+            </div>
 
-    <h1 class="pade-header">Intersecting Rects</h1>
-
-    <div class="svg-canvas">
-      <svg id="canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
-      </svg>
-    </div>
-
-  </section>
-
-</body>
-
+            <div class="controls">
+                <div class="control">
+                    <label for="sums-number">Color Count</label>
+                    <input
+                        type="number"
+                        id="sums-number"
+                        value="16"
+                        min="1"
+                        max="100"
+                        onchange="console.log(this.value)"
+                    />
+                    <input
+                        type="range"
+                        id="sums-range"
+                        value="16"
+                        min="1"
+                        max="100"
+                        step="1.0"
+                        onchange="console.log(this.value)"
+                    />
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

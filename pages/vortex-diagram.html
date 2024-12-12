@@ -1,64 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="#" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="#">
+        <title>Visual Maths</title>
 
-  <title>Visual Maths</title>
+        <script src="https://kit.fontawesome.com/cdcc65decb.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="../scripts/main.js" defer></script>
+        <script type="text/javascript" src="../scripts/maths/vortex-diagram/vortex-diagram.js" defer></script>
 
-  <script src="https://kit.fontawesome.com/cdcc65decb.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="../scripts/main.js" defer></script>
+        <link rel="stylesheet" href="../styles/main.css" />
+        <link rel="stylesheet" href="../styles/vortex-diagram.css" />
+    </head>
 
-  <link rel="stylesheet" href="../styles/main.css">
+    <body>
+        <nav>
+            <div class="nav-home">
+                <a class="nav-icon" href="https://github.com/intern-jck/vortex-math" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="/"><span>Visual Maths</span></a>
+            </div>
 
-</head>
+            <div class="nav-menu">
+                <a class="nav-link" href="./vortex-diagram.html">Vortex Diagram</a>
+                <a class="nav-link" href="./square-sums.html">Square Sums</a>
+                <a class="nav-link" href="./map-colors.html">Map Colors</a>
+            </div>
+        </nav>
 
-<body>
+        <div class="page-header">
+            <h1>Vortex Diagram</h1>
+        </div>
 
-  <nav>
-    <div class="nav-home">
-      <a class="nav-icon" href="https://github.com/intern-jck/vortex-math" target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="/"><span>Visual Maths</span></a>
-    </div>
+        <div class="app">
+            <div class="graph">
+                <div id="svg-container" class="svg-container"></div>
+            </div>
 
-
-    <div class="nav-menu">
-      <a class="nav-link" href="./vortex-diagram.html">Vortex Diagram</a>
-      <!-- <a class="nav-link" href="./square-sums.html">Square Sums</a> -->
-      <!-- <a class="nav-link" href="./map-colors.html">Map Colors</a> -->
-    </div>
-  </nav>
-
-  <div class="page-header">
-    <h1>Vortex Diagram</h1>
-  </div>
-
-  <div class="app">
-    <div class="graph">
-      <div id="svg-container" class="svg-container"></div>
-    </div>
-
-    <div class="controls">
-      <div class="control">
-        <label for="modulus-number">Modulus</label>
-        <input type="number" id="modulus-number" value="9" min="2" max="99" onchange="updateModulus(this.value)">
-        <input type="range" id="modulus-range" value="9" min="2" max="100" step="1.0"
-          oninput="updateModulus(this.value)">
-      </div>
-      <div class="control">
-        <label for="multiplier-number"> Multiplier </label>
-        <input type="number" id="multiplier-number" value="2" min="1" max="99" onchange="updateMultiplier(this.value)">
-        <input type="range" id="multiplier-range" value="2" min="0" max="100" step="1.0"
-          oninput="updateMultiplier(this.value)">
-      </div>
-    </div>
-  </div>
-
-</body>
-
+            <div class="controls">
+                <div class="control">
+                    <label for="modulus-number">Modulus</label>
+                    <input
+                        type="number"
+                        id="modulus-number"
+                        value="9"
+                        min="2"
+                        max="99"
+                        onchange="updateModulus(this.value)"
+                    />
+                    <input
+                        type="range"
+                        id="modulus-range"
+                        value="9"
+                        min="2"
+                        max="100"
+                        step="1.0"
+                        oninput="updateModulus(this.value)"
+                    />
+                </div>
+                <div class="control">
+                    <label for="multiplier-number"> Multiplier </label>
+                    <input
+                        type="number"
+                        id="multiplier-number"
+                        value="2"
+                        min="1"
+                        max="99"
+                        onchange="updateMultiplier(this.value)"
+                    />
+                    <input
+                        type="range"
+                        id="multiplier-range"
+                        value="2"
+                        min="0"
+                        max="100"
+                        step="1.0"
+                        oninput="updateMultiplier(this.value)"
+                    />
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
