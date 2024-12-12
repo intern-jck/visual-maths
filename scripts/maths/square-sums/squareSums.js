@@ -1,28 +1,43 @@
-// Class to find test if a sequence of numbers
-// can be arranged so each number in sequence
-// can be summed with it's neighbor to form a perfect square.
-
 function createAdjencyList(nodes, func) {
     let list = {};
-    for (let i = 1; i <= nodes.length; i++) {
+    let a, b;
+
+    for (let i = 0; i <= nodes.length; i++) {
+        // console.log('NODE: ', nodes[i]);
         for (let j = i + 1; j <= nodes.length; j++) {
+            a = nodes[i];
+            b = nodes[j];
+
             if (i !== j) {
-                if (func(i, j)) {
-                    if (list[i]) {
-                        list[i].push(j);
+                if (func(a, b)) {
+                    if (list[a]) {
+                        list[a].push(b);
                     } else {
-                        list[i] = [j];
+                        list[a] = [b];
                     }
-                    if (list[j]) {
-                        list[j].push(i);
+                    if (list[b]) {
+                        list[b].push(a);
                     } else {
-                        list[j] = [i];
+                        list[b] = [a];
                     }
                 }
             }
         }
     }
     return list;
+}
+
+function findPath(node, adjList, visited, path) {
+    console.log('N:', node);
+    adjList[node].map((n) => {
+        console.log('\t', n);
+        if (path.indexOf(n) === -1 && visited[n] === false) {
+            path.push(n);
+            visited[n] = true;
+            findPath(n, adjList, visited, path);
+        }
+    });
+    return path;
 }
 
 // Test if two numbers sum to a perfect square.
@@ -41,11 +56,20 @@ function updateNumber(val) {
 
 function getGraph(count) {
     let nodes = [];
+    let visited = [];
+    let path = [];
+
     for (let i = 1; i <= count; i++) {
         nodes.push(i);
+        visited.push(false);
     }
+    console.log('NODES: ', nodes);
+
     let adjencyList = createAdjencyList(nodes, isSquare);
-    console.log(adjencyList);
+    console.log('LIST: ', adjencyList);
+    path = findPath(nodes[0], adjencyList, visited, path);
+    console.log(path);
+    // return adjencyList;
 }
 
 window.onload = () => {
