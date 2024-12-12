@@ -1,5 +1,3 @@
-
-
 function vortextDiagram() {
     let n = 9;
     let svgWidth = 400;
@@ -126,4 +124,3 @@ function getLineColor(color1, color2, min, max, val) {
     let rgb = "rgb(" + Math.abs(r) + ',' + Math.abs(g) + ',' + Math.abs(b) + ")";
     return rgb;
 }
-
