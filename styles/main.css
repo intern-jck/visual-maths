@@ -1,0 +1,25 @@
+:root {
+  --primary-color: blue;
+  --secondary-color: green;
+  --active-color: green;
+  --background-color: white;
+  --font-color: black;
+  --font-family: 'Courier New'
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-size: 100%;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+}
